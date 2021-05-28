@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from client import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('base.urls')),
+    path('client/login/',views.homeLogin,name="login_Client"),
+    path('client/register/',views.registerPage,name="register_client"),
+    path('client/profile/',views.getDetailClient,name="profile_client"),
+    path('client/update/',views.modifierClient,name="modifier_client"),
+    path('client/listOffre',views.GetAllOffre,name="list_offre"),
+    path('client/<int:idC>/DetailsOffre',views.GetDetailsOffre,name="Details_offre"),
+    path('client/myoffre',views.GetOffreClient,name="offre_by_client"),
+    path('client/update/<int:idO>/offre',views.ModifierOffre,name="modifier_Offre"),
 ]

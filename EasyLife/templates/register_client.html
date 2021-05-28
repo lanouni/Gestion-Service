@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'css/css_login/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/css_login/bootstrap.min.css'%}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/css_login/style.css'%}">
+
+    <title>Login #6</title>
+  </head>
+  <body>
+  
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('{% static 'img/img_login/bg_1.jpg'%}');"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form  method="POST">
+            {% csrf_token %}
+              <div class="form-group first">
+                <label for="username">nom</label>
+                <input type="text" class="form-control" name="nom" >
+
+              </div>
+              <div class="form-group first">
+                <label for="password">prenom</label>
+                <input type="text" class="form-control" name="prenom" >
+                
+              </div>
+              <div class="form-group first">
+                <label for="username">email</label>
+                <input type="text" class="form-control" name="email" >
+
+              </div>
+
+              <div class="form-group first">
+                <label for="username">password</label>
+                <input type="password" class="form-control" name="password" >
+              </div>
+
+              <div class="form-group first">
+                <label for="username">telephone</label>
+                <input type="text" class="form-control" name="tel" >
+              </div>
+              <div class="form-group first">
+                <label for="username">ville</label>
+                <input type="text" class="form-control" name="ville" >
+              </div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+              </div>
+
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+
+              <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook btn d-flex justify-content-center align-items-center">
+                  <span class="icon-facebook mr-3"></span> First time? Sign up
+                </a>
+              </div>
+            </form>
+             {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                  {% for msg in messages %}
+                    {{ msg }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+    <script src="{% static 'js/js_login/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/js_login/popper.min.js'%}"></script>
+    <script src="{% static 'js/js_login/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/js_login/main.js'%}"></script>
+  </body>
+</html>
